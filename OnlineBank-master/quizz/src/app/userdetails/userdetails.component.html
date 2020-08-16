@@ -1,0 +1,128 @@
+
+    
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet"  href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https:////cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script> 
+   <!-- <link rel = "stylesheet"
+   type = "text/css"
+   href = "userdetails.component.css" /> -->
+   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1.0">
+    <title>Tables</title>
+    <link rel="stylesheet"  href="css/bootstrap.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet"  href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+
+
+    <link rel="stylesheet" type="text/css" href="https:////cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+ -->
+
+    <br><br>
+  <div class="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> -->
+          <i class="fa fa-bank" style="font-size:36px"></i>
+          <a class="navbar-brand text-uppercase" href="/icin-bank">ICIN BANK </a>
+        </div>
+        </div>
+<nav class="navbar navbar-expand-sm bg-light navbar-light" style="font-size:21px">
+  <ul class="navbar-nav">
+  <li class="nav-item active">
+      <a class="nav-link" routerLink="/userdetails">User Details</a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link" routerLink="/chequerequest">Request Cheque Book</a>
+    </li>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    <li class="nav-item">
+      <button class="nav-link" style="border:none; background-color:transparent;color:gray;font-align-bottom:true"  (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</nav>
+
+
+<br><br>
+<br><br><br>
+<br><br>
+<!-- <h3>      User Details</h3> -->
+    <div class="container mb-3 mt-3">
+    <table class="table table-striped" id="mydataTable">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>User Name</th>
+                
+                <th>Savings Account Number</th>
+                <th>Enable/Disable</th>
+                
+            </tr>
+            
+            
+        </thead>
+        <tbody>
+         <tr *ngFor="let user of users">
+               <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            
+            <td>{{user.username}}</td>
+
+           <td ><div  >
+           <!-- {{findSavingsaccount(user.username)}} -->
+           </div>
+           </td>
+            
+        
+        
+            <td><div *ngIf="user.enable==false  ; else elseBlock">
+                    <!--<script type="text/typescript">document.getElementById("disable_button").style.display = "none"</script>-->
+                    <button id="enable_button" class="btn btn-success badge-pill" [disabled]="clicked" (click)="enable($event,user.username) ">Enable</button>
+                   
+                    </div>
+
+                     <ng-template #elseBlock> 
+                     <!--<script type="text/typescript"> document.getElementById("enable_button").style.display = "none"</script>-->
+                     <button id="disable_button" class="btn btn-success badge-pill" [disabled]="clicked" (click)="disable($event,user.username) ">Disable</button>
+                     </ng-template>
+                </td>
+                </tr> 
+        </tbody>
+        
+    </table>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready( function () {
+            $('#mydataTable').DataTable();
+        } );
+    </script>
+    <div class="footer">
+  <p>Copyright &#169; 2020 ICIN BANK</p>
+</div> 
+    
+  

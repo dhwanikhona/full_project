@@ -1,0 +1,15 @@
+
+<input type="text" placeholder="Enter question id" [(ngModel)]="quiz.id">
+<br><br>
+<input type="text" placeholder="Enter question " [(ngModel)]="quiz.question">
+<br><br>
+<input type="text" placeholder="Enter question opt1" [(ngModel)]="quiz.opt1">
+<br><br>
+<input type="text" placeholder="Enter question opt2" [(ngModel)]="quiz.opt2">
+<br><br>
+<input type="text" placeholder="Enter question opt3" [(ngModel)]="quiz.opt3">
+<br><br>
+<input type="text" placeholder="Enter question opt4" [(ngModel)]="quiz.opt4">
+<br><br>
+<input type="text" placeholder="Enter your answer" [(ngModel)]="quiz.answer">
+<button (click)="updateQuiz()">Submit</button>

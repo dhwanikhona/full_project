@@ -1,0 +1,98 @@
+<!-- <p>profile works!</p> -->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> -->
+          <i class="fa fa-bank" style="font-size:36px"></i>
+          <a class="navbar-brand text-uppercase" href="/icin-bank">ICIN BANK </a>
+        </div>
+        </div>
+<nav class="navbar navbar-expand-sm bg-light navbar-light" style="font-size:21px">
+  <ul class="navbar-nav">
+  <li class="nav-item ">
+      <a class="nav-link" routerLink="/home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/transfer">Transfer</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/transaction">Transaction</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/saving">Saving Account Details</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/request">Request</a>
+    </li>
+    
+    
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/myprofile">My Profile</a>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" style="border:none; background-color:transparent;color:gray;font-align-bottom:true"  (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</nav>
+
+
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRAyd59Rdb-AVScBP7fCYxvtIpYvqYfsZ1V8Q&usqp=CAU" alt=""/> -->
+                        <h3>My Profile.</h3>
+                        <hr>
+                        
+                        
+                    </div>
+                    <div class="col-md-9 register-right">
+                       
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                               <div class="wrapper">
+                                <div class="container">
+   
+                                <h3 class="register-heading">User Details</h3>
+                                <br><br>
+                                <h3 class="register-heading">Account Number: {{savingsaccount.accountNumber}}</h3>
+                                <br><br>
+                                <h3 class="register-heading">          Name: {{userdetails.firstName}} {{userdetails.lastName}}</h3>
+                                <br><br>
+                                <h3 class="register-heading"> Mobile Number: {{userdetails.mobileNumber}} </h3>
+                                <br><br>
+                                <h3 class="register-heading">       EmailId: {{userdetails.emailId}} </h3>
+                                <br><br>
+                                <h3 class="register-heading">       Address: {{userdetails.address}} </h3>
+                                <br><br><br><br>
+
+                                    
+                                    
+                                </div>
+                            
+                            
+                                                                <div class="col-md-6">
+                                                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+<div class="footer">
+  <p>Copyright &#169; 2020 ICIN BANK</p>
+</div> 

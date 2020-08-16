@@ -1,0 +1,79 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<br><router-outlet></router-outlet>
+<div class="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> -->
+          <i class="fa fa-bank" style="font-size:36px"></i>
+          <a class="navbar-brand text-uppercase" href="/icin-bank">ICIN BANK </a>
+        </div>
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://thumbs.dreamstime.com/b/vector-illustration-isolated-white-background-login-button-icon-login-icon-button-126998514.jpg"/>
+                        <h3>Welcome</h3>
+                        <input type="submit" name="" value="New User" routerLink="/register"/><br/>
+                      </div>
+                    <div class="col-md-9 register-right">
+                            <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Login </h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                       <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="User Name *" value="" required [(ngModel)]="login.username"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Password *" value="" required [(ngModel)]="login.password"/>
+                                        </div>
+                                        
+                                        
+                                        <input type="submit" class="btnRegister"  value="Login" (click)="onSubmit()"/>
+                                    </div>
+                                    
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                      <br><br><br>  
+                                        <!-- <input type="submit" class="btnRegister"  value="Transfer Amount"/> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <!-- <h3  class="register-heading">Apply as a Hirer</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Email *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                                        </div>
+
+
+                                    </div> -->
+                                    <div class="col-md-6">
+                                                                           
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+           

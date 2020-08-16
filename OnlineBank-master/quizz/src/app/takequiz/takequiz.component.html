@@ -1,0 +1,110 @@
+<!-- <h3><u>Attempt Quiz</u></h3>
+<div *ngFor="let quiz of quizs">
+<br>
+<h3><mark>Q.{{quiz.question}}</mark> </h3>
+<h3>{{quiz.opt1}}</h3>
+<h3>{{quiz.opt2}}</h3>
+<h3>{{quiz.opt3}}</h3>
+<h3>{{quiz.opt4}}</h3>
+<button (click)="addAnswer()">Submit</button>
+</div> -->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="wrapper">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> -->
+          <i class="fa fa-bank" style="font-size:36px"></i>
+          <a class="navbar-brand text-uppercase" href="/icin-bank">ICIN BANK </a>
+        </div>
+        </div>
+<nav class="navbar navbar-expand-sm bg-light navbar-light" style="font-size:21px">
+  <ul class="navbar-nav">
+  <li class="nav-item ">
+      <a class="nav-link" routerLink="/home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLink="/transfer">Transfer</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLink="/transaction">Transaction</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " routerLink="/saving">Saving Account Details</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/request">Request</a>
+    </li>
+    
+    
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <li class="nav-item">
+      <a class="nav-link " routerLink="/myprofile">My Profile</a>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" style="border:none; background-color:transparent;color:gray;font-align-bottom:true"  (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</nav><br>
+
+<router-outlet></router-outlet>
+
+<div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAllBMVEX///8AgAAAewCgwqAAfAD2+fYAdQDd7t0AggAAeQAAfgBQo1B8unyoz6iMwYxsrWyfyZ+y1bJZpVmayJqYwphgqmC93L0AhQBssWx9tH3s9uzz+vOy1rKQvZDl8uXG4cZCnULO5c7T6NM1ljUnjyd3tnfg8OBAnEAaihqo0qiJwYnB3cGPwo9irGIylTJKoEpbqlsjkCNnYI3JAAAKGUlEQVR4nO2daWOiPBDHkQWBWK3HChVd8KjWVlvb7//lHsELck44NOnD/912RfJzckwmk8QwTrJ/n4ysdm/t36eVf+WbDj3U+n1CXmd6Agy35qMLU5PMIEot+Go9uiS1CW3DI+Hzb7VgInN47GS8R5eiVnm+8ec3m/BoxD8Noe5qCPVXQ6i/GkL91RDqr4ZQfzWE+qsh1F8Nof5qCPVXQ6i/GkL91RDqr4ZQfzWE+qsh1F8Nof76fxK6ektMaK03jr7aTEwhodkzdNbfhvD4p8mjC1lKjQ0bQvXVtMPkT/tHF7KUIIR/H13IUuo3hA2h8moIG0L11RAyCDfLxSKOB4NZ9/2oUaL9x1VPcK198sspipaLeDdL3nZ8U4/ymuM/R++zOKqIcNlxkellZJbQfCHkC9cBArzr+J/ut1MF4SyocteQhUReobOCx8asYFSeMG5VvK9NMHkJpbZhIfO9LGH4U/nGPW/HI3yRjW4uSxLuqw+nolcOYCz7g5ov5QjDrxr2Xnqc3kZ+J912U4pQ+ieFyPzHBAxfpV9oxaUIu3Xs3bM+mYRLPGYtljeQJeznHrg3ofy3eTkvoitLuKtj3YYTCoq20t+GcrVUmjDc1tHTcHy3sax7gV7DUoTGUw2jRcAGNHxZQvMj97w84SYoRUMtE8/9tg9yiOgnZ8IChMZ71X2Nx/faHCkvEbWwn6sAoTEKqqyoyMR9ZVyLVxPMaG1j7OkihIYzdltmiVnTdSKEUMudi2eI4ccWUV7mUdQhZk+FCI+NcbHzu91uMvHtySidK4+6iXzf38XxwrHJbycVxX53hKt7lX8V+W0FCTVSQ9gQqq+GsCFUXw1h8qcu8ZS98AeDZKjt7xNNLpHnl5u+2fpMP/D0NNn3u4MlpVCValaEcPdlWVbqN2F+lCWhyyMr3JGsWIMChP1KQ8II1ZvrUYDQr3oK7H3Qy/YowiioPuY9YJQOrI1PzCmKE37UEMX4Kcdnf7gmGlNW1goRFojQiuWV6m2mh6TE5hd9HiZNWE/Mu8yQG50X3zz6Kp00YT0x7+figM7XOVKFhtUQjmqJCK8LAw6u8VtrXA3hoA4bFk6GWH5a11bTfqd+RJqwQJRdrLZ4LZ8iZ7/1brFUa0X/lLajRdg/oGyQEbmMEbHAiF/9wgV/lZsmZx3gMVRWULKA17asOlOhzV4fpWsxRHik35yxPlzE8158wWPQQiHTJWdnXMUHj1jJ4MTNixAa4WTb8tq0kLOk2h7aPm9o5WLKGVN+XuvAfqAQ4dFRCqNoGcfxcSJ8Uheq2eWRXRwvnSicSvFF6xZtJQpxGnJBwgepj6gdOZpzlgZ0Ily8MbwN7m4CfQinT4jVvyHe1EQbwt0P09NAX7zGrAthj3MMvsmNguhBOB3z/H3EjGAk0oIwPPB8YcQZDA09CJ0tNxuDm8mhBeHS5fqIaMVfJ1efMOYDCmM8yhOKALEcL1IQwtLx2hLyRdMYYTYOHqJXjHAmyvgSmhBEyJxc1q6ucB7q0cNPGSlNiC9u0kwoTDhSmRAQfLbEZVO4HeIJ2jTAgzhnTF0b9gFppby5/UXKEkIy5rG9I3SpSggBRAFjyTAnRdshaP1HONinUtOGIEBrDvouJQlHbQBgy4Wl4qhYS0egBTxYHVWSELYGa3ZA6dMgwtZ8mNXLM1+TrP5dlWZm949Kwt7xMmSWD2ZBFJw9bnvZ7Y9GxxdMJunrh7gO+E9DIUQ5QdO5eEn6Xrsd7OkhwB6oDaLgtKZqd3/a1yz+9O2IEICwHnmvtJ5iD1xEP/V+4Vj+rs07niqIKJ0hcAvuuZeZzgsU9UhYSz4JTegVr6g92KsvIWBuFJUl748xld+1WVBevxjgOTcFzxyFCR27qN6dqmkLdQpV0XN6kX0oshKd/jzR3YwY2AUs+Hl+yClUTJQuOd/NiGamIcKGiZb5fXnAL2TCU7rutI6dsDShGyFwmLCGdhnCq6MQ36c7RdtrcaFt8Pv2mxSppe3rGgewTZTULZsQ2gYPmWptz6WN6D3dHl/foyleRwtoG8wHnt5ly5iPenxUmBXE0OkGaXgbNDt5D8Gey+2Bzlow0azS3b4UIXMn1wYPuAu0kUmqp+RehWu3TjtagS/ZBskJ14K/dnoTMt1nWthq03tzEWdewhZgitXZSAFac9psyxm2kJXdrUMph2kid/XBWuu3o9loP1k/P3+Ox98duIZjTPi8+eXSyYCrKGONaTnoj3qTpIgvx9cMsXIkL56MZhtgPKAOQavom2gRTVVBh4k3uQQ/dQR0gC1WFVVeQEBzrivgB7ANUntRHVRqmNBBv74NArdt6DtM/Po2CLSgpW8vWtJVU1+wsxD1raIGLISgr6uWSoyo7zBx1lrQmerrql3Ft6LWbfAiHuKvAOQhajxM5MVqi9q6alPiOHH6OZpk2FAThQfvB9+z/USxIh741Ubhm9VCWxyRrKj6AqYnq1+yRG7CuxttAS/Hc6AA3yuYb4u0yLYW2qwu4XcU4Hm92YqqrwUzh/+TVrwh6gv4k11AQcSm1ktFBWfjqabNV36FCLkEoncDjGb7va+XKXFAVkU9VdFBkCwWfQm3wiikzQ+5xkdace2dAPunXEJkPtG+S0nRN4CiFoGYDhO3IKoHTAF+uBzG0WBkRU0smBkbUSB3Xsaj5FCqKAsR82/0uHaRt0eZqKh2/kIZi350l1piWzBFzHc39jDvhAs2oSshR3CNUa6i2kPMBS9zhtudxLcgZsVpB58MP3T7MUiCcwJOiBcHLnzDAa031T04URXNWTEk7h1DW+5hFwqIdNXoSjdVUQDdQmfU3VGRsA2e5CWAEWFu5Eqf4HZnbYCXwaUblSOiwSIXdivi4wStoigBpPVIqgOGK4k26JBX8QG2oD9W0PsKU8AlJUVUdcAIaEGUJLQ65Mkl6NEH/oiUBH5BgImlFqQFH33ej1BTIKCXgFCqKH7HpnKaAi9FTdvggjwmVPkqSvrPdJ2qKNkGla+ixicwESgBpByPhO/WU0/AW189BqD6V4UAc9XSthaTxzxaygOKjzzKAOpYRR3YBhZTW0BgL5MOEz5ZRdVvg0YEutoyraKUezc1AITdbJkC7siBXoMqahgdQCv09G2DR4cbUEkthidjKe/JJFoCQoeM+aD6gdFU4h2rqQU35C7x8hcF3UfC3RPpSbEhGbJ44KmMchJsI0StxFI2Of3XpIoa4o2SKQjpmetSRQ3R4U4nS5FHWWoEaMQcQmSl8U/yVnZL9bhoVpzzUC4RbOI4GaQToGEwj3C4hujxpmqqvjaBieWXInRZRco3VTL3S3UxTnzJLJPl3B71l89IDWiEVubIMnuFMoC13z9agyiZ9+Yqe1TD7UIza6tHOhAuAtEb5tfi9+fz4zxt94uM3MwReMjbEtM+/8tLjhZcq56EwFY42rbPsoYDiqHsxag30rEJ3mRf9eiSsPUf2KQcVvqdGFkAAAAASUVORK5CYII=" alt=""/>
+                        <h3>Request New Cheque Book</h3>
+                        
+                    </div>
+                    <div class="col-md-9 register-right">
+                       
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Request New Cheque Book</h3>
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Enter request type*" value="" [(ngModel)]="request.requestType"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Enter your description *   " value=""[(ngModel)]="request.requestDes" />
+                                        </div>
+                                        <div class="col-md-6">
+                                     
+                                        <input type="submit" class="btnRegister"  value="Submit" (click)="sendReq()"/>
+                                    </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        
+
+
+                                    </div> 
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer">
+  <p>Copyright &#169; 2020 ICIN BANK</p>
+</div> 
